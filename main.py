@@ -17,8 +17,8 @@ if st.button("Analyze Resume"):
     else:
         with st.spinner("Analyzing resume..."):
             gaps, suggestions = analyze_resume_and_role(resume_file, job_role)
-        st.subheader("🛠️ Identified Gaps")
-        st.markdown(gaps)
+        # st.subheader("🛠️ Identified Gaps")
+        # st.markdown(gaps)
 
         st.subheader("✨ Suggested Resume Improvements")
         st.markdown(suggestions)
