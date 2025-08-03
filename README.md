@@ -33,6 +33,9 @@ A powerful AI-driven tool that analyzes your resume against job descriptions to 
 2. **Install dependencies**
    ```bash
    pip install -r requirements.txt
+   
+   # Optional: Install platform-specific SQLite compatibility
+   python install_deps.py
    ```
 
 3. **Environment Configuration**
@@ -68,6 +71,10 @@ A powerful AI-driven tool that analyzes your resume against job descriptions to 
   - Resume Gap Analyzer Agent
   - Resume Enhancer Agent
 - **`logic/resume_analyzer.py`**: Core analysis logic and text extraction
+- **`sqlite_fix.py`**: SQLite compatibility module for ChromaDB
+- **`chromadb_fix.py`**: ChromaDB initialization with error handling
+- **`install_deps.py`**: Platform-specific dependency installer
+- **`packages.txt`**: System dependencies for deployment
 
 ### AI Agents
 
@@ -135,6 +142,41 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [CrewAI](https://crewai.com/) for the multi-agent framework
 - [Groq](https://groq.com/) for fast LLM inference
 - [Streamlit](https://streamlit.io/) for the web framework
+
+## 🚀 Deployment
+
+### Streamlit Cloud
+1. Push your code to GitHub
+2. Connect your repository to [Streamlit Cloud](https://share.streamlit.ioapp.com/)
+3. The `packages.txt` file will ensure system dependencies are installed
+4. Add your `GROQ_API_KEY` in the Streamlit Cloud secrets
+
+### Other Platforms
+For Heroku, Railway, or other platforms, ensure you:
+- Set the `GROQ_API_KEY` environment variable
+- The `pysqlite3-binary` package in requirements.txt handles SQLite compatibility
+- The `sqlite_fix.py` module automatically resolves ChromaDB SQLite version issues
+
+### Troubleshooting
+
+#### SQLite Version Error
+If you encounter: `RuntimeError: Your system has an unsupported version of sqlite3`
+
+**Multi-Platform Solution**: The codebase includes comprehensive fixes:
+
+1. **Automatic Detection**: `sqlite_fix.py` detects your SQLite version
+2. **Platform-Specific Handling**: 
+   - **Linux/Mac**: Uses `pysqlite3-binary` if available
+   - **Windows**: Uses environment variable overrides and patches
+3. **Fallback Modes**: Multiple strategies ensure compatibility
+4. **Manual Installation**: Run `python install_deps.py` for platform-specific deps
+
+The fix is applied automatically when the app starts.
+
+#### Other Common Issues
+- **API Key Error**: Ensure `GROQ_API_KEY` is set in your environment variables
+- **File Upload Issues**: Check file permissions and ensure uploads directory exists
+- **Memory Issues**: Consider upgrading your deployment plan for large PDF processing
 
 ## 📞 Support
 

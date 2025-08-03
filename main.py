@@ -1,3 +1,7 @@
+# Fix SQLite and ChromaDB compatibility before importing other modules
+import sqlite_fix
+import chromadb_fix
+
 import streamlit as st
 from dotenv import load_dotenv
 from logic.resume_analyzer import analyze_resume_and_role, generate_improved_resume
