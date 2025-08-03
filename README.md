@@ -156,3 +156,9 @@ If you encounter any issues or have questions:
 ---
 
 **Made with ❤️ using AI and open-source technologies**
+
+
+
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/8c02da30-5cc9-40d5-b6f1-84c9dee15a2a" />
+<img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/d140e6f1-ebf8-40db-890b-9627e64b5601" />
+
