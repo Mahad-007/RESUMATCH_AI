@@ -23,7 +23,7 @@ if st.button("Analyze Resume"):
         st.subheader("✨ Suggested Resume Improvements")
         st.markdown(suggestions)
 
-        if st.button("Generate AI-Improved Resume"):
-            with st.spinner("Generating enhanced resume..."):
-                improved = generate_improved_resume(resume_file, job_role)
-            st.download_button("Download Enhanced Resume", improved, file_name="enhanced_resume.txt")
+        # if st.button("Generate AI-Improved Resume"):
+        #     with st.spinner("Generating enhanced resume..."):
+        #         improved = generate_improved_resume(resume_file, job_role)
+        #     st.download_button("Download Enhanced Resume", improved, file_name="enhanced_resume.txt")
